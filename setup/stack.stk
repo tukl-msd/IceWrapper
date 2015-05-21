@@ -1,0 +1,46 @@
+material SILICON :
+   thermal conductivity     1.30e-4 ;
+   volumetric heat capacity 1.628e-12 ;
+
+material BEOL :
+   thermal conductivity     2.25e-6 ;
+   volumetric heat capacity 2.175e-12 ;
+
+connection to ambient :
+   heat transfer coefficient 1.0e-7 ;
+   ambient temperature 300 ;
+
+layer PCB :
+   height 10 ;
+   material BEOL ;
+
+die TOP_IC :
+   source  2 SILICON ;
+   layer  50 SILICON ;
+
+die BOTTOM_IC :
+   layer  10 BEOL ;
+   source  2 SILICON ;
+   layer  50 SILICON ;
+
+dimensions :
+   chip length 6100, width 10600 ;
+   cell length  100, width   100 ;
+
+stack:
+   die     MEMORY_DIE     TOP_IC    floorplan "./mem.flp" ;
+   die     CORE_DIE       BOTTOM_IC floorplan "./core.flp" ;
+   layer   CONN_TO_PCB    PCB ;
+
+solver:
+   transient step 0.01, slot 0.05 ;
+   initial temperature 300.0 ;
+
+output:
+   T        (  MEMORY_DIE, 5000, 5000, "output1.txt",             slot ) ;
+   T        (    CORE_DIE, 5000, 5000, "output1.txt",             slot ) ;
+   Tmap     (    MEMORY_DIE,             "output2.txt",             slot ) ;
+   Pmap     (    CORE_DIE,             "output3.txt",             slot ) ;
+   Tflp     (  MEMORY_DIE,             "output4.txt", minimum,    slot ) ;
+   Tflpel   (    CORE_DIE.CPUs,        "output5.txt", average,    slot ) ;
+
