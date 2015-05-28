@@ -10,9 +10,9 @@ my $zoom   = shift || die("Please specify the zoom factor!");
 
 
 # Extract Filename:
-unless($file =~ /(.+)\.flp/)
+unless($file =~ /(.+)\.flp/ || $file =~ /(.+)\.mlt/)
 {
-    die("Please provide a fpl filetype");
+    die("Please provide a fpl/mlt filetype");
 }
 my $outfile = $1;
 
