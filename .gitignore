@@ -1,2 +1,12 @@
 *.pdf
 *.svg
+*.o
+*.d
+*.swp
+*.swo
+cscope*
+3D-ICE-SystemC-Client
+Makefile
+power_map.txt
+temperature_map.txt
+

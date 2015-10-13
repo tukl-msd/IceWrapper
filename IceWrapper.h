@@ -68,13 +68,15 @@ class IceWrapper
   private:
     bool openConnection();
     bool closeConnection();
+    void getMap(OutputType_t type, std::string filename);
 
   public:
     unsigned int getNumberOfFloorplanElements();
     void sendPowerValues(std::vector<float> * powerValues);
     void simulate();
     void getTemperature(std::vector<float> &TemperatureValues, OutputInstant_t instant, OutputType_t type, OutputQuantity_t quantity);
-    void getMap(std::string filename);
+    void getTemperatureMap(std::string filename);
+    void getPowerMap(std::string filename);
 };
 
 #endif
