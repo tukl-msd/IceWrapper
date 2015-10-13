@@ -106,8 +106,9 @@ SC_MODULE(YourSimulator)
                                               TDICE_OUTPUT_QUANTITY_NONE);
 
             // Visualize this file within octave:
-            //      imagesc(flipud(load("test.txt")))
-            thermalSimulation->getMap("test.txt");
+            //      imagesc(flipud(load("temperature_map.txt")))
+            thermalSimulation->getTemperatureMap("temperature_map.txt");
+            thermalSimulation->getPowerMap("power_map.txt");
 
             std::cout << "@" << sc_time_stamp() 
                       << "\tTemperature=" << temperatureValues.at(0) << endl;

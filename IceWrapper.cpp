@@ -200,12 +200,11 @@ void IceWrapper::getTemperature(std::vector<float> &TemperatureValues, OutputIns
     }
 }
 
-void IceWrapper::getMap(std::string filename)
+void IceWrapper::getMap(OutputType_t type, std::string filename)
 {
     // Send request to 3D-ICE:
 
     OutputInstant_t instant = TDICE_OUTPUT_INSTANT_SLOT ;
-    OutputType_t type = TDICE_OUTPUT_TYPE_TMAP ;
     OutputQuantity_t quantity = TDICE_OUTPUT_QUANTITY_NONE ;
 
     network_message_init (&client_tmap) ;
@@ -258,3 +257,14 @@ void IceWrapper::getMap(std::string filename)
     network_message_destroy (&server_reply) ;
     myfile.close();
 }
+
+void IceWrapper::getTemperatureMap(std::string filename)
+{
+    getMap(TDICE_OUTPUT_TYPE_TMAP, filename);
+}
+
+void IceWrapper::getPowerMap(std::string filename)
+{
+    getMap(TDICE_OUTPUT_TYPE_PMAP, filename);
+}
+
