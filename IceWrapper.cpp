@@ -219,7 +219,7 @@ void IceWrapper::getMap(OutputType_t type, std::string filename)
 
     // Open file
     ofstream myfile;
-    myfile.open (filename);
+    myfile.open (filename, std::fstream::in | std::fstream::out | std::fstream::app);
 
     // Receive temperature map:
 
