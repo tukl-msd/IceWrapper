@@ -62,6 +62,20 @@ Configure the paths to:
 
 in the 3D-ICE-SystemC-Client.pro file.
 
+Optionally you can set environment variables in your ~/.bashrc file or equivalent.
+
+```bash
+# SuperLU library home
+export LIBSUPERLU_HOME=<path>
+
+# 3D-ICE libraby home
+export LIBTHREED_ICE_HOME=<path>
+
+# SystemC home and target architecture
+export SYSTEMC_HOME=<path>
+export SYSTEMC_TARGET_ARCH=<[linux,linux64]>
+```
+
 The file 3D-ICE-SystemC-Client.cpp shows an example implementation of a SystemC based simulator and how the IceWrapper can be used in it.
 
 For project build run do qmake and make:

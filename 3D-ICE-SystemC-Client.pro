@@ -17,6 +17,9 @@ isEmpty(systemc_target_arch) {
 }
 message(SystemC target architecture is $${systemc_target_arch})
 
+QMAKE_RPATHDIR += $${systemc_home}/lib-$${systemc_target_arch}
+message(Linker options QMAKE_RPATHDIR is $${QMAKE_RPATHDIR})
+
 libthreed_ice_home = $$(LIBTHREED_ICE_HOME)
 isEmpty(libthreed_ice_home) {
 	libthreed_ice_home = /opt/3D-ICE/
