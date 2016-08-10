@@ -1,11 +1,11 @@
+##*The IceWrapper code was ported to inside the [3D-ICE](http://esl.epfl.ch/3D-ICE) project in order to make users' life easyer! Please use directly the latest version of 3D-ICE!*
+
+You can [download 3D-ICE here](http://esl.epfl.ch/3d-ice/download.html). You will find on its user manual instructions on how to bind it to your SystemC/TLM2.0 application. An example code is also provided.
+
 IceWrapper - A SystemC Wrapper for 3D-ICE
 =========================================
 
 This repository contains a wrapper for [3D-ICE](http://esl.epfl.ch/3D-ICE) (from EPFL) for SystemC based simulations. With this wrapper 3D-ICE can easily be integrated into any SystemC or TLM based simulation environment.
-
-**The IceWrapper code was ported to inside the [3D-ICE](http://esl.epfl.ch/3D-ICE) project in order to make users' life easyer!**
-
-You can [download 3D-ICE here](http://esl.epfl.ch/3d-ice/download.html). You will find on its user manual instructions on how to bind it to your SystemC/TLM2.0 application. An example code is also provided.
 
 
 ## Contact
